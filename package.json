@@ -1,7 +1,6 @@
 {
-  "name": "components",
+  "name": "@yates/components",
   "version": "0.1.0",
-  "private": true,
   "main": "./dist/componets.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",

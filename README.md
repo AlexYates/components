@@ -1,5 +1,7 @@
 # components
 
+Simple Vue components
+
 ## Project setup
 ```
 pnpm install
