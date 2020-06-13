@@ -28,10 +28,9 @@
     </p>
 
     <SimpleSelect
-      hint="Some usefull information about this component"
       error="A custom error message for this component"
-      name="someOptions"
-      :options="[
+      hint="Some usefull information about this component"
+      :items="[
         {
           text: 'Hello',
           value: 'hello'
@@ -49,6 +48,7 @@
           value: 'goodbye2'
         },
       ]"
+      name="someOptions"
       :required="true"
     >
       <template slot="label">This is the Simple Select component</template>
@@ -74,11 +74,42 @@
       Velit iusto tempore quod minus provident eligendi omnis aperiam, labore sapiente, soluta ratione facere voluptates delectus explicabo quisquam. Corporis reprehenderit repellendus impedit?
       <br />Quaerat reiciendis, mollitia enim fugiat molestiae voluptatibus eveniet dolorum illum corrupti dolore cumque doloribus excepturi in voluptas laudantium quasi fuga, praesentium ut.
     </p>
+    <SimpleCheckbox
+      hint="Some usefull information about this component"
+      error="A custom error message for this component"
+      name="someCheckboxes"
+      :items="[
+        {
+          required: false,
+          text: 'Hello',
+          value: 'hello'
+        },
+        {
+          required: false,
+          text: 'Goodbye',
+          value: 'goodbye'
+        },
+        {
+          required: true,
+          text: 'Hello2',
+          value: 'hello2'
+        },
+        {
+          required: true,
+          text: 'Goodbye2',
+          value: 'goodbye2'
+        },
+      ]"
+      :required="true"
+    >
+      <template slot="label">This is a Simple Checkbox list</template>
+    </SimpleCheckbox>
   </div>
 </template>
 
 <script>
 import SimpleButton from "./components/SimpleButton.vue";
+import SimpleCheckbox from "./components/SimpleCheckbox.vue";
 import SimpleHeading from "./components/SimpleHeading.vue";
 import SimpleIcon from "./components/SimpleIcon.vue";
 import SimpleInput from "./components/SimpleInput.vue";
@@ -88,6 +119,7 @@ export default {
   name: "App",
   components: {
     SimpleButton,
+    SimpleCheckbox,
     SimpleHeading,
     SimpleIcon,
     SimpleInput,

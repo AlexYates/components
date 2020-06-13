@@ -1,26 +1,29 @@
 <template>
   <label
-    class="flex flex-col mb-1 relative"
+    class="border border-gray-500 flex flex-col mb-2 px-2 relative rounded"
     :class="{
       'cursor-not-allowed opacity-50': isDisabled
     }"
     :for="name"
   >
-    <span class="absolute m-2 text-gray-700 text-sm">
+    <div class="py-2 text-gray-700 text-sm">
       <slot name="label" />
-    </span>
-    <select
-      class="bg-white border border-gray-500 flex-grow mb-1 p-2 pl-1 pt-8 rounded"
-      :class="{
-        'cursor-not-allowed': isDisabled
-      }"
-      :disabled="isDisabled"
-      :id="name"
-      :name="name"
-      :required="required"
-    >
-      <option v-for="item in items" :key="item.value" :value="item.value">{{ item.text }}</option>
-    </select>
+    </div>
+    <div class="flex items-center mb-2" v-for="item in items" :key="item.value">
+      <input
+        class="border border-gray-500 rounded"
+        :class="{
+          'cursor-not-allowed': isDisabled
+        }"
+        :disabled="isDisabled"
+        :id="item.value"
+        :name="item.value"
+        :required="item.required"
+        type="checkbox"
+      />
+      <label :for="item.value" class="ml-2">{{ item.text }}</label>
+    </div>
+
     <span v-if="hasError && error" class="mb-1 text-red-500 text-sm">{{ error }}</span>
     <span v-if="hint" class="mb-1 text-sm">{{ hint }}</span>
   </label>
@@ -28,7 +31,7 @@
 
 <script>
 export default {
-  name: "SimpleSelect",
+  name: "SimpleCheckbox",
   props: {
     disabled: {
       default: false,
@@ -44,13 +47,13 @@ export default {
       required: false,
       type: String
     },
-    name: {
-      required: true,
-      type: String
-    },
     items: {
       required: true,
       type: Array
+    },
+    name: {
+      required: true,
+      type: String
     },
     required: {
       default: false,
