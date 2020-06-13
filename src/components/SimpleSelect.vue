@@ -9,8 +9,8 @@
     <span class="absolute m-2 text-gray-700 text-sm">
       <slot name="label" />
     </span>
-    <input
-      class="bg-white border border-gray-500 flex-grow mb-1 p-2 pt-8 rounded"
+    <select
+      class="bg-white border border-gray-500 flex-grow mb-1 p-2 pl-1 pt-8 rounded"
       :class="{
         'cursor-not-allowed': isDisabled
       }"
@@ -18,8 +18,9 @@
       :id="name"
       :name="name"
       :required="required"
-      type="text"
-    />
+    >
+      <option v-for="option in options" :key="option.value" :value="option.value">{{ option.text }}</option>
+    </select>
     <span v-if="hasError && error" class="mb-1 text-red-500 text-sm">{{ error }}</span>
     <span v-if="hint" class="mb-1 text-sm">{{ hint }}</span>
   </label>
@@ -27,7 +28,7 @@
 
 <script>
 export default {
-  name: "SimpleInput",
+  name: "SimpleSelect",
   props: {
     disabled: {
       default: false,
@@ -46,6 +47,10 @@ export default {
     name: {
       required: true,
       type: String
+    },
+    options: {
+      required: true,
+      type: Array
     },
     required: {
       default: false,

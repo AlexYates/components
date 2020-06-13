@@ -26,6 +26,34 @@
       Quam laborum unde natus itaque. Quaerat blanditiis sint ipsum sit nostrum, doloribus hic obcaecati magni incidunt maxime magnam eaque veniam qui nulla.
       <br />Amet error doloribus dolorem ea totam, minus tempore quasi rerum nam ipsam commodi provident quaerat architecto expedita beatae minima porro inventore itaque. Dolorum, doloribus consequuntur. Veniam ipsam atque ab itaque enim, facere distinctio suscipit molestiae recusandae! Accusantium ullam at quod quasi facere suscipit minus?
     </p>
+
+    <SimpleSelect
+      hint="Some usefull information about this component"
+      error="A custom error message for this component"
+      name="someOptions"
+      :options="[
+        {
+          text: 'Hello',
+          value: 'hello'
+        },
+        {
+          text: 'Goodbye',
+          value: 'goodbye'
+        },
+        {
+          text: 'Hello2',
+          value: 'hello2'
+        },
+        {
+          text: 'Goodbye2',
+          value: 'goodbye2'
+        },
+      ]"
+      :required="true"
+    >
+      <template slot="label">This is the Simple Select component</template>
+    </SimpleSelect>
+
     <p
       class="mb-2"
     >Minima distinctio deleniti quibusdam ullam odit ratione tempora saepe suscipit modi maiores voluptatem maxime unde porro nulla, impedit sunt illo vitae. Consequatur?</p>
@@ -51,17 +79,19 @@
 
 <script>
 import SimpleButton from "./components/SimpleButton.vue";
+import SimpleHeading from "./components/SimpleHeading.vue";
 import SimpleIcon from "./components/SimpleIcon.vue";
 import SimpleInput from "./components/SimpleInput.vue";
-import SimpleHeading from "./components/SimpleHeading.vue";
+import SimpleSelect from "./components/SimpleSelect.vue";
 
 export default {
   name: "App",
   components: {
     SimpleButton,
+    SimpleHeading,
     SimpleIcon,
     SimpleInput,
-    SimpleHeading
+    SimpleSelect
   }
 };
 </script>
