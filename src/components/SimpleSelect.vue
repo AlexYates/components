@@ -1,50 +1,23 @@
 <template>
-  <label
-    class="flex flex-col mb-1 relative"
-    :class="{
-      'cursor-not-allowed opacity-50': isDisabled
-    }"
-    :for="name"
-  >
-    <span class="absolute m-2 text-gray-700 text-sm">
-      <slot name="label" />
-    </span>
-    <select
-      class="bg-white border border-gray-500 flex-grow mb-1 p-2 pl-1 pt-8 rounded"
-      :class="{
-        'cursor-not-allowed': isDisabled
-      }"
-      :disabled="isDisabled"
-      :id="name"
-      :name="name"
-      :required="required"
-    >
-      <option v-for="item in items" :key="item.value" :value="item.value">{{ item.text }}</option>
+  <div class="govuk-form-group">
+    <label class="govuk-label" :for="id">{{ label }}</label>
+    <select class="govuk-select" :id="id" :name="name">
+      <option
+        v-for="item in items"
+        :key="item.value"
+        :value="item.value"
+        :selected="item.selected"
+      >{{ item.text }}</option>
     </select>
-    <span v-if="hasError && error" class="mb-1 text-red-500 text-sm">{{ error }}</span>
-    <span v-if="hint" class="mb-1 text-sm">{{ hint }}</span>
-  </label>
+  </div>
 </template>
 
 <script>
 export default {
   name: "SimpleSelect",
   props: {
-    disabled: {
-      default: false,
-      required: false,
-      type: Boolean
-    },
-    error: {
-      default: "Please fill in the field as specified",
-      required: false,
-      type: String
-    },
-    hint: {
-      required: false,
-      type: String
-    },
-    name: {
+    id: {
+      default: "one",
       required: true,
       type: String
     },
@@ -52,15 +25,16 @@ export default {
       required: true,
       type: Array
     },
-    required: {
-      default: false,
-      required: false,
-      type: Boolean
+    label: {
+      default: "Sort by",
+      required: true,
+      type: String
+    },
+    name: {
+      default: "one",
+      required: true,
+      type: String
     }
-  },
-  data: () => ({
-    isDisabled: false,
-    hasError: false
-  })
+  }
 };
 </script>
