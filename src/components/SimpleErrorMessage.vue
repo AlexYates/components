@@ -1,6 +1,6 @@
 <template>
-  <div class="text-red-500 font-semibold mb-2 simple-error-message" :id="id">
-    <span class="hidden simple-visually-hidden">{{ hidden }}</span>
+  <div class="simple-error-message" :id="id">
+    <span class="simple-visually-hidden">{{ hidden }}</span>
     {{ text }}
   </div>
 </template>

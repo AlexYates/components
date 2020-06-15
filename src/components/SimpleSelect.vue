@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col inline-flex mb-2 simple-form-group">
-    <label class="font-semibold mb-1 simple-label" :for="id">{{ label }}</label>
-    <select class="border-2 border-gray-800 flex p-2 simple-select" :id="id" :name="name">
+  <div class="simple-form-group">
+    <label class="simple-label" :for="id">{{ label }}</label>
+    <select class="simple-select" :id="id" :name="name">
       <option
         v-for="item in items"
         :key="item.value"

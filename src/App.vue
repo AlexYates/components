@@ -11,10 +11,20 @@
       ]"
     />
     <!--  -->
-    <SimpleButton :disabled="false" :wide="true">Save and continue</SimpleButton>
+    <SimpleButton :disabled="false" :wide="false">Save and continue</SimpleButton>
+    <!--  -->
+    <SimpleButton :disabled="false" type="warning" :wide="true">Save and continue</SimpleButton>
+    <!--  -->
+    <SimpleButtonNavigation :disabled="false" to="/" :wide="true">
+        <span>Start your application</span>
+        <SimpleIcon size="xs">
+          <path d="M10 2 L10 30 24 16 Z" />
+        </SimpleIcon>
+    </SimpleButtonNavigation>
     <!--  -->
     <SimpleFieldset :legend="'Which types of waste do you transport?'">
-      <span id="waste-hint" class="simple-hint">Select all that apply.</span>
+      <!--  -->
+      <SimpleHint :id="`waste-hint`" :hint="`Select all that apply.`" />
       <!--  -->
       <SimpleCheckboxes
         :items="[
@@ -63,8 +73,6 @@
       ]"
       :title="'There is a problem'"
     />
-    <!--  -->
-    <SimpleFieldset :legend="'I am legend'" />
     <!--  -->
     <SimpleInsetText
       :text="`It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.`"
@@ -140,14 +148,18 @@
 </template>
 
 <script>
+import SimpleIcon from "./components/SimpleIcon.vue";
+//
 import SimpleBackLink from "./components/SimpleBackLink.vue";
 import SimpleBreadcrumbs from "./components/SimpleBreadcrumbs.vue";
 import SimpleButton from "./components/SimpleButton.vue";
+import SimpleButtonNavigation from "./components/SimpleButtonNavigation.vue";
 import SimpleCheckboxes from "./components/SimpleCheckboxes.vue";
 import SimpleDetails from "./components/SimpleDetails.vue";
 import SimpleErrorMessage from "./components/SimpleErrorMessage.vue";
 import SimpleErrorSummary from "./components/SimpleErrorSummary.vue";
 import SimpleFieldset from "./components/SimpleFieldset.vue";
+import SimpleHint from "./components/SimpleHint.vue";
 import SimpleInsetText from "./components/SimpleInsetText.vue";
 import SimplePanel from "./components/SimplePanel.vue";
 import SimpleRadios from "./components/SimpleRadios.vue";
@@ -158,19 +170,21 @@ import SimpleTag from "./components/SimpleTag.vue";
 import SimpleTextarea from "./components/SimpleTextarea.vue";
 import SimpleWarningText from "./components/SimpleWarningText.vue";
 
-// import SimpleIcon from "./components/SimpleIcon.vue";
-
 export default {
   name: "App",
   components: {
+    SimpleIcon,
+    //
     SimpleBackLink,
     SimpleBreadcrumbs,
     SimpleButton,
+    SimpleButtonNavigation,
     SimpleCheckboxes,
     SimpleDetails,
     SimpleErrorMessage,
     SimpleErrorSummary,
     SimpleFieldset,
+    SimpleHint,
     SimpleInsetText,
     SimplePanel,
     SimpleRadios,
@@ -180,8 +194,6 @@ export default {
     SimpleTag,
     SimpleTextarea,
     SimpleWarningText
-
-    // SimpleIcon
   }
 };
 </script>

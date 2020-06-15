@@ -1,6 +1,6 @@
 {
   "name": "@yates/components",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "main": "./dist/components.common.js",
   "module": "./dist/components.esm.js",
   "unpkg": "./dist/components.min.js",
@@ -23,9 +23,11 @@
   ],
   "dependencies": {
     "core-js": "^3.6.5",
+    "tailwindcss": "^1.4.6",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-eslint": "~4.4.0",
     "@vue/cli-service": "~4.4.0",

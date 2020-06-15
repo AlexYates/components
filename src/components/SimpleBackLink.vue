@@ -1,6 +1,6 @@
 <template>
   <div
-    class="cursor-pointer flex inline-flex items-center mb-2 text-sm <!-- simple_interactive --> hover:bg-yellow-400 focus:bg-yellow-400 active:bg-yellow-400 hover:border-gray-800 focus:border-gray-800 active:border-gray-800 border-transparent border-b-4 <!-- simple_interactive --> simple-back-link"
+    class="simple-back-link simple_interactive"
     @click="goBack"
     tabindex="0"
   >
