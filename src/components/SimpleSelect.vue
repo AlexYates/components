@@ -1,7 +1,7 @@
 <template>
-  <div class="govuk-form-group">
-    <label class="govuk-label" :for="id">{{ label }}</label>
-    <select class="govuk-select" :id="id" :name="name">
+  <div class="flex flex-col inline-flex mb-2 simple-form-group">
+    <label class="font-semibold mb-1 simple-label" :for="id">{{ label }}</label>
+    <select class="border-2 border-gray-800 flex p-2 simple-select" :id="id" :name="name">
       <option
         v-for="item in items"
         :key="item.value"
@@ -26,7 +26,6 @@ export default {
       type: Array
     },
     label: {
-      default: "Sort by",
       required: true,
       type: String
     },

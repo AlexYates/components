@@ -1,5 +1,5 @@
 <template>
-  <strong class="govuk-tag govuk-tag--grey" :class="{ '': colour }">{{ text }}</strong>
+  <strong class="simple-tag simple-tag--grey" :class="{ '': colour }">{{ text }}</strong>
 </template>
 
 <script>

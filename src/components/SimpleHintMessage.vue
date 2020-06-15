@@ -1,5 +1,5 @@
 <template>
-  <span class="govuk-hint" :id="id">
+  <span class="simple-hint" :id="id">
     <slot name="default">For example, 12 11 2007</slot>
   </span>
 </template>

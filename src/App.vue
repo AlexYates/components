@@ -5,25 +5,16 @@
     <!--  -->
     <SimpleBreadcrumbs
       :items="[
-        { text: `One`, url: `/one` },
-        { text: `Two`, url: `/two` },
-        { text: `Three`, url: `/three` },
-        { text: `Four`, url: `/four` }
+        { text: `Home`, url: `/one` },
+        { text: `Passports, travel and living abroad`, url: `/two` },
+        { text: `Travel abroad`, url: `/three` },
       ]"
     />
     <!--  -->
-    <SimpleButton :disabled="false" :wide="true">
-      <SimpleIcon class="mr-2">
-        <path d="M14 2C 9 2 3 7 3 15 3 23 9 29 17 29 25 29 30 23 30 18 19 25 7 13 14 2Z" />
-      </SimpleIcon>
-      <template slot="default">Default</template>
-      <SimpleIcon class="ml-2">
-        <path d="M14 2C 9 2 3 7 3 15 3 23 9 29 17 29 25 29 30 23 30 18 19 25 7 13 14 2Z" />
-      </SimpleIcon>
-    </SimpleButton>
+    <SimpleButton :disabled="false" :wide="true">Save and continue</SimpleButton>
     <!--  -->
     <SimpleFieldset :legend="'Which types of waste do you transport?'">
-      <span id="waste-hint" class="govuk-hint">Select all that apply.</span>
+      <span id="waste-hint" class="simple-hint">Select all that apply.</span>
       <!--  -->
       <SimpleCheckboxes
         :items="[
@@ -36,14 +27,14 @@
         {
           id: `waste-2`,
           name: `waste-2`,
-          value: `carcasses-2`,
-          label: `Waste from animal carcasses-2`
+          value: `mines`,
+          label: `Waste from mines or quarries `
         },
         {
           id: `waste-3`,
           name: `waste-3`,
-          value: `carcasses-3`,
-          label: `Waste from animal carcasses-3`
+          value: `agricultural`,
+          label: `Farm or agricultural waste `
         } 
       ]"
       ></SimpleCheckboxes>
@@ -79,43 +70,44 @@
       :text="`It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.`"
     />
     <!--  -->
-    <SimplePanel :title="`Your reference number`">
+    <SimplePanel :title="`Application complete`">
+      <span class="text-lg">Your reference number</span>
       <br />
       <strong>HDJ2123F</strong>
     </SimplePanel>
     <!--  -->
-    <SimpleFieldset :legend="'Hiya!'">
-      <span
-        id="waste-hint"
-        class="govuk-hint"
-      >This includes changing your last name or spelling your name differently.</span>
+    <SimpleFieldset :legend="'Have you changed your name?'">
+      <div
+        id="changed-name"
+        class="mb-2 text-gray-700 simple-hint"
+      >This includes changing your last name or spelling your name differently.</div>
       <SimpleRadios
         :items="[
           {
             id: `changed-name-1`,
             name: `changed-name`,
             value: `yes`,
-            label: `Yeppers`
+            label: `Yes`
           },
           {
             id: `changed-name-2`,
             name: `changed-name`,
             value: `no`,
-            label: `Nopey-nopes`
+            label: `No`
           }
         ]"
       />
     </SimpleFieldset>
     <!--  -->
     <SimpleSelect
-      :id="`twotwo`"
+      :id="`select-posts`"
       :items="[
         { isSelected: false, text: `Recently published`, value: `published` },
         { isSelected: true, text: `Recently updated`, value: `updated` },
         { isSelected: false, text: `Most views`, value: `views` },
         { isSelected: false, text: `Most comments`, value: `comments` }
       ]"
-      :label="`This is a label for posts`"
+      :label="`Sort by `"
       :name="`select-posts`"
     />
     <!--  -->
@@ -166,7 +158,7 @@ import SimpleTag from "./components/SimpleTag.vue";
 import SimpleTextarea from "./components/SimpleTextarea.vue";
 import SimpleWarningText from "./components/SimpleWarningText.vue";
 
-import SimpleIcon from "./components/SimpleIcon.vue";
+// import SimpleIcon from "./components/SimpleIcon.vue";
 
 export default {
   name: "App",
@@ -187,9 +179,9 @@ export default {
     SimpleSummaryList,
     SimpleTag,
     SimpleTextarea,
-    SimpleWarningText,
-    //
-    SimpleIcon
+    SimpleWarningText
+
+    // SimpleIcon
   }
 };
 </script>

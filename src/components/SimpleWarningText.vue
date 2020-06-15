@@ -1,10 +1,10 @@
 <template>
-  <div class="govuk-warning-text">
-    <span class="govuk-warning-text__icon" aria-hidden="true">
+  <div class="simple-warning-text">
+    <span class="simple-warning-text__icon" aria-hidden="true">
       <slot name="icon">!</slot>
     </span>
-    <strong class="govuk-warning-text__text">
-      <span class="govuk-warning-text__assistive">
+    <strong class="simple-warning-text__text">
+      <span class="simple-warning-text__assistive">
         {{ assistive }}
       </span>
       <slot name="text">{{ text }}</slot>

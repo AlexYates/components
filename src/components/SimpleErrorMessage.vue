@@ -1,8 +1,8 @@
 <template>
-  <span class="govuk-error-message" :id="id">
-    <span class="govuk-visually-hidden">{{ hidden }}</span>
+  <div class="text-red-500 font-semibold mb-2 simple-error-message" :id="id">
+    <span class="hidden simple-visually-hidden">{{ hidden }}</span>
     {{ text }}
-  </span>
+  </div>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 {
   "name": "@yates/components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./dist/components.common.js",
   "module": "./dist/components.esm.js",
   "unpkg": "./dist/components.min.js",

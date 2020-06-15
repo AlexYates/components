@@ -1,6 +1,6 @@
 <template>
   <textarea
-    class="govuk-textarea"
+    class="simple-textarea"
     :id="id"
     :name="name"
     :rows="rows"
